@@ -1,0 +1,23 @@
+<div>
+
+<p>test works!</p>
+
+<p> 
+     user Name :
+     <input type="text" #userNameElement value={{user.name}}/>
+
+     <br/>
+     user email :
+     <input type="text" #userEmailElement value={{user.email}}/>
+     <br/>
+     user phone :
+     <input type="text" #userPhoneElement value={{user.phone}}/>
+
+     <br/>
+     <button (click)="changeUserName(userNameElement.value)">
+           change </button>
+     <br/>
+</p>
+
+
+</div>
