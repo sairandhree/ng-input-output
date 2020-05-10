@@ -8,20 +8,28 @@ import { User } from './user.model';
 })
 export class AppComponent {
   title = 'my-second-project';
-  user : User;
+  users :User[] = [];
   
-  constructor(){
-    this.user = new User();
-    this.user.email = "adsf@sasdf.com";
-    this.user.name = "asdf";
-    this.user.phone = 345345345345;
+  ngOnInit(){
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => {
+      console.log('inside first then');
+      return response.json()
+    })
+    .then(usersResponse => {
+      
+      usersResponse.forEach(user => {
+        console.log(' user data is ',user);
+        this.users.push(user);
+      });  
+      
+    });
+    
   }
   
 
 
-  onChangeUser(event){
-    this.user.name = event.changedUserName;
-  }
+ 
 
 
 }

@@ -1,12 +1,25 @@
 Second App works
 
-
-{{user |json }}
-
 <hr/>
-<app-test [user]="user"
- (userNameChanged)="onChangeUser($event)">
-</app-test>
 
 
-<app-test2> THis goes inside ng-contnent </app-test2>
+<!-- <p *ngFor="let user of users">{{user.name}}</p> -->
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>username</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>website</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.website}}</td>
+    </tr>
+</table>
